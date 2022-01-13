@@ -1,0 +1,5 @@
+DEFINE FUNCTION  NoToStr
+	PARAMETERS InputVal as Numeric 
+	
+	RETURN STR(InputVal,10,2)
+ENDFUNC
