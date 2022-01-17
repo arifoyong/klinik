@@ -5,11 +5,6 @@ PROCEDURE errHandler
    *? 'Line of code with error: ' + mess1
    *? 'Line number of error: ' + LTRIM(STR(mlineno))
    *? 'Program with error: ' + mprog
-   
-   
-   CLOSE TABLES
-   CLOSE ALL
-   ON ERROR
 ENDPROC
 
 * Example of usage
