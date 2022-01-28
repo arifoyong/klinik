@@ -5,9 +5,9 @@ CLOSE TABLES
 CLEAR ALL
 PUBLIC gcUsername, gcFullname,gcLevel  as string 
 
-gcUsername = "admin"
-gcFullname = "12345"
-gcLevel  = "admin"
+gcUsername = "supervisor"
+gcFullname = ""
+gcLevel  = "supervisor"
 
 
 DO FORM main_form
