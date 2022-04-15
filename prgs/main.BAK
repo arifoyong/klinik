@@ -3,11 +3,13 @@ SET PATH TO data;forms;prgs;reports;menus
 
 CLOSE TABLES
 CLEAR ALL
-PUBLIC gcUsername, gcFullname,gcLevel  as string 
+PUBLIC gcUsername, gcFullname,gcLevel  as string
+PUBLIC versionNo as string 
 
-gcUsername = "supervisor"
+gcUsername = ""
 gcFullname = ""
-gcLevel  = "supervisor"
+gcLevel  = ""
+versionNo = "2.0"
 
 
 DO FORM main_form
