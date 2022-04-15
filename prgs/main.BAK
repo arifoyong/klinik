@@ -9,7 +9,7 @@ PUBLIC versionNo as string
 gcUsername = ""
 gcFullname = ""
 gcLevel  = ""
-versionNo = "2.0"
+gcVersion = "2.0"
 
 
 DO FORM main_form
