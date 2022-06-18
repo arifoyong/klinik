@@ -1,6 +1,7 @@
 SET DEFAULT TO C:\Play-Foxpro\klinik
 SET PATH TO data;forms;prgs;reports;menus
 
+
 * ================================================== *
 CLOSE TABLES
 CLEAR ALL
