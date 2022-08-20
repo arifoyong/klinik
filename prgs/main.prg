@@ -6,9 +6,9 @@ CLEAR ALL
 PUBLIC gcVersion as string 
 PUBLIC gcDbDir, gcNotaDir as string
 
-gcVersion = "2.1.2"
+gcVersion = "2.1.3"
 gcDbDir = "C:\Play-Foxpro\klinik\data"
-gcNotaDir = "C:\Play-Foxpro\nota"
+*gcNotaDir = "C:\Play-Foxpro\nota"
 
 
 * =================================================== *
