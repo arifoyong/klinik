@@ -1,4 +1,4 @@
-SET DEFAULT TO C:\Play-Foxpro\klinik
+SET DEFAULT TO C:\Play-Foxpro\new\klinik
 SET PATH TO data;forms;prgs;reports;menus
 
 
@@ -11,7 +11,7 @@ PUBLIC versionNo as string
 gcUsername = ""
 gcFullname = ""
 gcLevel  = ""
-gcVersion = "2.1"
+gcVersion = "2.2"
 
 DO FORM main_form
 * ================================================== *
