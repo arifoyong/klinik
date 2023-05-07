@@ -1,6 +1,3 @@
-
-
-
 FUNCTION IdFromLastNo(tblName, fieldName)
 *How to use
 *
@@ -14,6 +11,7 @@ FUNCTION IdFromLastNo(tblName, fieldName)
 
  	RETURN lastId(1) + 1
 ENDFUNC
+*=====================================================================================================
 
 FUNCTION IdFromLastNoSpecial(tblName, fieldName, filterType, filterNo)
 *How to use
@@ -45,6 +43,7 @@ FUNCTION IdFromLastNoSpecial(tblName, fieldName, filterType, filterNo)
 
  	RETURN lastId(1) + 1
 ENDFUNC
+*=====================================================================================================
 
 
 FUNCTION IdFromUnixTime
@@ -56,4 +55,18 @@ FUNCTION IdFromUnixTime
 
  	RETURN DATETIME() - ref
 ENDFUNC
+*=====================================================================================================
 
+FUNCTION IdFromTime
+*Return current datetime in the format of yyyyMMddhhmmss
+*Data is returned in the form of integer
+*How to use
+*
+*SET PROCEDURE to getid
+*id = IdFromTime()
+	idStr = ALLTRIM(TTOC(DATETIME(), 1))
+	
+	
+ 	RETURN VAL(idStr) 
+ENDFUNC
+*=====================================================================================================
