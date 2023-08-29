@@ -1,6 +1,7 @@
 from typing import List, Any
 import dbf
 import csv
+import pandas as pd
 
 class Field:
     '''
@@ -33,29 +34,39 @@ def csvToDbf(csvPath: str, fields: List[Field], dbfPath: str = 'output.dbf', has
 
     try:
         newTable.open(dbf.READ_WRITE)
-        with open(csvPath, 'r') as f:
-            csvReader = csv.reader(f)
-            if hasHeader: next(csvReader)
-            for row in csvReader:
-                rowData: Any = tuple(row)
-                newTable.append(rowData)
+        df = pd.read_csv(csvPath)
+        df['TOTAL'] = df['TOTAL'].apply(lambda x: x.strip() if isinstance(x, str) else x)
+        df[['TOTAL', 'STOK']] = df[['TOTAL', 'STOK']].apply(pd.to_numeric)
+        df.fillna(0, inplace=True)
+        for _, row in df.iterrows():
+            obat, stok, hargaBeli, total = row['NAMA OBAT'], row['STOK'], row['HARGA BELI'], row['TOTAL']
+
+            rowData: Any = (obat, stok, hargaBeli, total)
+            print(f"rowData {rowData}")
+            newTable.append(rowData)
+
         newTable.close()
     except Exception as e:
         print(f"Error: {e}")
         newTable.close()
 
 
-if __name__ == '__main__':
-    fieldList:List[Field] = [   Field('Latd', 'N(5,0)'),
-                                Field('LatM', 'N(5,0)'),
-                                Field('LatS', 'N(5,0)'),
-                                Field('NS', 'C(1)'),
-                                Field('LonD', 'N(5,0)'),
-                                Field('LonM', 'N(5,0)'),
-                                Field('LonS', 'N(5,0)'),
-                                Field('EW', 'C(1)'),
-                                Field('City', 'C(30)'),
-                                Field('State', 'C(2)')
+def main():
+    # fieldList:List[Field] = [   Field('NamaObat', 'C(50)'),
+    #                             Field('Stok', 'N(5,0)'),
+    #                             Field('HargaBeli', 'N(12,2)'),
+    #                             Field('Total', 'N(12,2)')
+    #                         ]
+    # csvToDbf('data/reguler2023.csv', fieldList, 'reguler2023.dbf')
+
+    fieldList:List[Field] = [   Field('NamaObat', 'C(50)'),
+                                Field('Stok', 'N(5,0)'),
+                                Field('HargaBeli', 'N(12,2)'),
+                                Field('Total', 'N(12,2)')
                             ]
     
-    csvToDbf('data/cities.csv', fieldList)
+    csvToDbf('data/jkn2023.csv', fieldList, 'jkn2023.dbf')
+
+
+if __name__ == '__main__':
+    main()
