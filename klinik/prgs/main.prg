@@ -1,4 +1,4 @@
-SET DEFAULT TO C:\Play-Foxpro\klinik_v3
+SET DEFAULT TO C:\Playground\Foxpro222\klinik
 SET PATH TO data;forms;prgs;reports;menus
 CLOSE TABLES
 CLEAR ALL
@@ -8,7 +8,7 @@ PUBLIC gcDbDir as string
 *PUBLIC gcDefaultDir as string
 
 gcVersion = "2.2"
-gcDefaultDir = "C:\Play-Foxpro\klinik_v3"
+gcDefaultDir = "C:\Playground\Foxpro222\klinik"
 *gcDbDir = "C:\Play-Foxpro\klinik_v3b\data"
 
 * =================================================== *
