@@ -1,7 +1,8 @@
 # Clinic application with legacy Foxpro
 
 ## How to use
-### Klinik
+### Klinik 
+ver 2.2.1
 To run the application go to Project Manager > Code. 
 Start by running the "main.prg"
 
